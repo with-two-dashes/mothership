@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`
+    title: `With-Two-Dashes`,
+    description: `Huh, how strange. I suppose this is a website, but can this truly be real?`,
+    author: `@not_two_hyphens`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -47,6 +47,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
+      // NOTE: keep this as the last item.
       resolve: 'gatsby-plugin-netlify',
       options: {
 
