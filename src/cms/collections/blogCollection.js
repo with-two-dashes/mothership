@@ -14,8 +14,18 @@ export const blogCollection = {
       widget: 'string'
     },
     {
+      label: 'Publish Date',
+      name: 'date',
+      widget: 'datetime'
+    },
+    {
+      label: 'Summary',
+      name: 'summary',
+      widget: 'string'
+    },
+    {
       label: 'Content',
-      name: 'content',
+      name: 'body',
       widget: 'markdown'
     }
   ]
