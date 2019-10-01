@@ -8,6 +8,11 @@ export const blogCollection = {
       label: 'Title',
       name: 'title',
       widget: 'string'
+    },
+    {
+      label: 'Content',
+      name: 'content',
+      widget: 'markdown'
     }
   ]
 }
