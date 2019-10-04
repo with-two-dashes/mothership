@@ -16,7 +16,7 @@ const editor = { preview: false }
 export const blogCollection = {
   label: 'Blog',
   name: 'blog-collection',
-  folder: `${__dirname}/blog`,
+  folder: `blog`,
   slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
   create: true,
   editor,
