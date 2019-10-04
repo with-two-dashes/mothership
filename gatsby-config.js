@@ -47,6 +47,13 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
+      resolve: 'gatsby-plugin-gtag',
+      options: {
+        trackingID: `G-K4X8HFZS5M`, // AKA MeasurementID, here
+        exclude: []
+      }
+    },
+    {
       // NOTE: keep this as the last item.
       resolve: 'gatsby-plugin-netlify',
       options: {
