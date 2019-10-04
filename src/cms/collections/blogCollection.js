@@ -11,15 +11,13 @@ const fields = [
   MarkdownField('Content', 'body')
 ]
 
-const editor = {
-  preview: false
-}
+const editor = { preview: false }
 
 export const blogCollection = {
-  name: 'blog-collection',
-  folder: `src/blog`,
-  slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
   label: 'Blog',
+  name: 'blog-collection',
+  folder: `${__dirname}/blog`,
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
   create: true,
   editor,
   fields
