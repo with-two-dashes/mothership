@@ -1,17 +1,19 @@
 import { init } from 'netlify-cms-app'
 import collections from './collections'
 
-const mediaFolder = `${__dirname}/src/images`
+const mediaFolder = `static/assets`
+const publicFolder = 'assets'
+
+const backend = { name: 'git-gateway' }
 
 init({
   config: {
+    backend,
     display_url: 'https://www.with-two-dashes.com',
-    backend: {
-      name: 'git-gateway'
-    },
     load_config_file: false,
     media_folder_relative: true,
-    collections,
-    media_folder: mediaFolder
+    media_folder: mediaFolder,
+    public_folder: publicFolder,
+    collections
   }
 })
