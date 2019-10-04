@@ -1,5 +1,3 @@
-import path from 'path'
-
 import {
   DateTimeField,
   StringField,
@@ -15,15 +13,11 @@ const fields = [
 
 const editor = { preview: false }
 
-export const blogCollection = ({
-  name,
-  collectionDirectoryRoot
-}) => ({
-  name,
+export const blogCollection = {
   label: 'Blog',
-  folder: path.normalize(collectionDirectoryRoot, 'blog'),
+  folder: 'blog',
   slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
   create: true,
   editor,
   fields
-})
+}

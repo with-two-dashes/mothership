@@ -1,4 +1,5 @@
 import { blogCollection } from './blogCollection.js'
+import path from 'path'
 
 const rawCollectionsMapping = {
   blogCollection
@@ -7,6 +8,12 @@ const rawCollectionsMapping = {
 export const setupCollections = ({
   collectionDirectoryRoot
 }) => Object.keys(rawCollectionsMapping).map(name => {
-  const setup = rawCollectionsMapping[name]
-  return setup({ name, collectionDirectoryRoot })
+  const { folder, ...rest } = rawCollectionsMapping[name]
+  return (
+    {
+      ...rest,
+      name,
+      folder: path.join(collectionDirectoryRoot, folder)
+    }
+  )
 })
