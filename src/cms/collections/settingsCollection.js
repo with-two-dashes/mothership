@@ -21,5 +21,6 @@ const files = [
 export const settingsCollection = {
   label: 'Settings',
   files,
-  editor
+  editor,
+  delete: false
 }
