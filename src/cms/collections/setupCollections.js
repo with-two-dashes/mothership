@@ -19,8 +19,7 @@ export const setupCollections = ({
         folder: path.join(collectionDirectoryRoot, folder)
       }
     )
-  }
-  if (file) {
+  } else if (file) {
     return (
       {
         ...rest,
@@ -28,5 +27,7 @@ export const setupCollections = ({
         file: path.join(collectionDirectoryRoot, file)
       }
     )
+  } else {
+    return { ...rest }
   }
 })
