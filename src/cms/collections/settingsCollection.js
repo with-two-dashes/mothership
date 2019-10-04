@@ -10,6 +10,7 @@ const siteSettingsFile = {
   name: 'siteSettings',
   label: 'Site Settings',
   file: 'settings/site.json',
+  delete: false,
   fields
 }
 
