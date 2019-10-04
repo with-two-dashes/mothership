@@ -28,6 +28,6 @@ export const setupCollections = ({
       }
     )
   } else {
-    return { ...rest }
+    return { name, ...rest }
   }
 })
