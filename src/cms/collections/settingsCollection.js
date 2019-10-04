@@ -7,9 +7,8 @@ const fields = [
 const editor = { preview: false }
 
 export const settingsCollection = {
-  label: 'Settings',
-  folder: 'settings',
-  slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+  label: 'Site Settings',
+  file: 'settings/site.json',
   editor,
   fields
 }
