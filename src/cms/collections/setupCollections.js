@@ -1,8 +1,10 @@
-import { blogCollection } from './blogCollection.js'
 import path from 'path'
+import { blogCollection } from './blogCollection.js'
+import { settingsCollection } from './settingsCollection.js'
 
 const rawCollectionsMapping = {
-  blogCollection
+  blogCollection,
+  settingsCollection
 }
 
 export const setupCollections = ({
