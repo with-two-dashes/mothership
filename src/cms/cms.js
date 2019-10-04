@@ -1,11 +1,10 @@
 import { init } from 'netlify-cms-app'
-import collections from './collections'
-
+import { setupCollections } from './collections/setupCollections'
 const mediaFolder = `static/assets`
 const publicFolder = 'assets'
-
 const backend = { name: 'git-gateway' }
-
+const collectionDirectoryRoot = `${__dirname}/src/collections/`
+const collections = setupCollections({ collectionDirectoryRoot })
 init({
   config: {
     backend,
