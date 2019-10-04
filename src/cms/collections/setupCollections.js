@@ -10,13 +10,26 @@ const rawCollectionsMapping = {
 export const setupCollections = ({
   collectionDirectoryRoot
 }) => Object.keys(rawCollectionsMapping).map(name => {
-  const { folder, file, ...rest } = rawCollectionsMapping[name]
+  const { folder, file, files, ...rest } = rawCollectionsMapping[name]
   if (folder) {
     return (
       {
         ...rest,
         name,
         folder: path.join(collectionDirectoryRoot, folder)
+      }
+    )
+  } else if (files) {
+    return (
+      {
+        ...rest,
+        name,
+        files: files.map(({ file, ...otherStuff }) => {
+          return {
+            file: path.join(collectionDirectoryRoot, file),
+            ...otherStuff
+          }
+        })
       }
     )
   } else if (file) {

@@ -6,9 +6,19 @@ const fields = [
 
 const editor = { preview: false }
 
-export const settingsCollection = {
+const siteSettingsFile = {
+  name: 'siteSettings',
   label: 'Site Settings',
   file: 'settings/site.json',
-  editor,
   fields
+}
+
+const files = [
+  siteSettingsFile
+]
+
+export const settingsCollection = {
+  label: 'Settings',
+  files,
+  editor
 }
