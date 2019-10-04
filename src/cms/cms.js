@@ -7,7 +7,7 @@ const backend = { name: 'git-gateway' }
 const collectionDirectoryRoot = `${__dirname}/src/collections/`
 const collections = setupCollections({ collectionDirectoryRoot })
 const siteURL = `https://www.with-two-dashes.com`
-const logoURL = `https://www.with-two-dashes.com/static/assets/trash_logo.png`
+const logoURL = `https://raw.githubusercontent.com/with-two-dashes/mothership/master/static/assets/trash-logo.png`
 
 init({
   config: {
