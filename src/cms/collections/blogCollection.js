@@ -1,12 +1,15 @@
 import {
   DateTimeField,
   StringField,
-  MarkdownField
+  MarkdownField,
+  BooleanField
 } from '../fields/index.js'
 
 const fields = [
   StringField('Title', 'title'),
   DateTimeField('Publish Date', 'date'),
+  BooleanField('Is Hidden', 'isHidden', { default: false }),
+  StringField('Slug', 'slug'),
   StringField('Summary', 'summary'),
   MarkdownField('Content', 'body')
 ]
