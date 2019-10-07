@@ -4,4 +4,44 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+const Path = require('path')
+
+exports.createPages = ({ actions: { createPage }, graphql }) => {
+  const SetupMarkdownCollection = collectionName => perItemInCollection => new Promise((resolve, reject) => {
+    graphql(`
+    query SetupCollectionQuery($collectionName: String!){
+      allFile(filter:{ sourceInstanceName: { eq: $collectionName } }){
+        edges {
+          node {
+            childMarkdownRemark{
+              id
+              frontmatter{
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+    `, { collectionName }).then(({ errors, data }) => {
+      if (errors) {
+        reject(errors)
+      } else {
+        data.allFile.edges.forEach(({ node: { childMarkdownRemark } }) => {
+          perItemInCollection(childMarkdownRemark)
+        })
+        resolve(data)
+      }
+    })
+  })
+
+  return Promise.all([
+    SetupMarkdownCollection('blog-collection')(({ id, frontmatter }) => {
+      createPage({
+        path: frontmatter.slug,
+        component: Path.resolve('src/templates/blogTemplate.js'),
+        context: { id }
+      })
+    })
+  ])
+}
